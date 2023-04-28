@@ -21,16 +21,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ assets('css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/flaticon.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/barfiller.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/font-awesome.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/nice-select.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/owl.carousel.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ assets('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/barfiller.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     <style>
         h1,
         h2,
