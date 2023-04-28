@@ -1,0 +1,176 @@
+/* 
+ * jQuery yacal's Demo CSS
+ * 
+ * Author: Eduardo Ludi (@eduludi)
+ * More info: http://eduludi.github.io/jquery-yacal/
+*/
+.wrap {
+	position: relative;
+	display: inline-block;
+}
+
+/* Same as Bootstrap's .clearfix */
+.clearfix {
+	display: table;
+	content: " ";
+	clear: both;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.yclNav {
+}
+.prev,
+.next {
+	z-index: 100;
+	position: absolute;
+	display: block;
+	top: 15px;
+	border-radius: 15px;
+	border: 1px solid transparent;
+	width: 30px;
+	height: 30px;
+}
+.prev:hover,
+.next:hover {
+	border-color: #fff;
+}
+.prev::before,
+.next::after {
+	position: absolute;
+	top: 0px;
+	color: #fff;
+	font-weight: bold;
+}
+.prev span,
+.next span {
+	display: none;
+}
+.prev {
+	left: 10px;
+}
+.prev::before {
+	content: '<';
+	left: 8px;
+}
+.next {
+	right: 10px;
+}
+.next:after {
+	content: '>';
+	right: 5px;
+}
+
+.month {
+	z-index: 5;
+	position: relative;
+	float: left;
+	margin: 10px 5px;
+	border: 1px solid lightgray;
+	border-radius: 2%;
+	min-height: 266px; /*this avoids jumping*/
+}
+.month h4 {
+	text-align: center;
+	margin: 0;
+	padding: 10px;
+	color:#fff;
+	/*border-bottom: 1px solid lightgray;*/
+	overflow: hidden;
+	background-color: #009688 !important;
+}
+
+.week {
+	position: relative;
+	height: 32px;
+	width: 210px;
+	margin: 0 45px;
+	border: 0 solid transparent;
+	border-width: 1px 0;
+}
+.week:not(.week0):hover {
+	border-color: rgba(255, 255, 255, 0.87);
+}
+.m7 h4
+{
+	background-color: #5aabe0 !important;
+}
+.m8 h4
+{
+	background-color:#fba64c !important;
+}
+.m9 h4
+{
+	background-color:#f86a78 !important;
+}
+.day {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+}
+.day,
+.wday {
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 28px;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #fff;
+	border-radius: 38px;
+	font-size: 14px;
+	color: #aaa;
+	//background-color:red;
+}
+.day.weekend {
+	color: #000;
+}
+.day.today {
+	background-color: #bbb;
+	color: white !important;
+}
+.day.selected {
+	border-color: #777;
+	background-color: red;
+}
+.day.active {
+color: white;
+    cursor: pointer;
+    background-color: green;
+}
+.day.active:hover {
+	border-color: #ddd;
+}
+.wday {
+	font-size: 12px;
+}
+.day.d0,
+.wday.wd0 {
+	left: 0;
+}
+.day.d1,
+.wday.wd1 {
+	left: 30px;
+}
+.day.d2,
+.wday.wd2 {
+	left: 60px;
+}
+.day.d3,
+.wday.wd3 {
+	left: 90px;
+}
+.day.d4,
+.wday.wd4 {
+	left: 120px;
+}
+.day.d5,
+.wday.wd5 {
+	left: 150px;
+}
+.day.d6,
+.wday.wd6 {
+	left: 180px;
+}

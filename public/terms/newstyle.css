@@ -1,0 +1,196 @@
+.table-middle
+{
+	color: white;
+	font-weight: bold;
+}
+#services h4
+{
+	color: black; 
+	font-size: 19px;
+}
+#services strong
+{
+color: black;
+ font-size: 17px;
+text-align: justify;
+}
+#new1
+{
+	margin-top: -56px;    
+	padding: 69px 0;
+}
+#desc
+{
+	  text-align: justify;
+	  padding: 57px;
+}
+.lead-half
+{
+	text-indent:24px;
+}
+#tablenew
+{
+	text-align:center;
+	color: #007159;
+	font-weight: bold;
+}
+#tright p
+{
+	text-align: justify;    
+	margin-left: 14px;
+	background-image: linear-gradient(to right, rgba(198, 0, 1, 0.29), white);
+	padding: 2px;
+}
+#tright ul
+{
+list-style-type: circle; 
+margin-left: 66px;
+text-align: justify;
+line-height: 29px;
+}
+#text-uppercase
+{
+	text-align:left;
+}
+.text-new
+{
+text-indent:24px;
+text-align:justify;
+line-height: 32px;
+}
+.bottom-margin p
+{
+ line-height: 29px;
+ text-align:justify;
+}
+#full-row p
+{
+  line-height: 27px;
+  text-align:justify;  
+    margin-left: 14px;
+
+}
+.tab-content p
+{
+margin-left: 11px; 
+text-align: justify;
+line-height: 28px;
+}
+.footer-faq
+{
+	 text-align: justify;
+	 font-size: 14px;
+	 text-indent:35px;
+	 margin-left: 22px;"
+}
+.tags
+{
+	  text-align: center;
+	  color: #c60001;
+	  font-weight: 450;
+}
+.tab-content h5
+{
+	text-align:center;
+	color: #007159;
+	font-weight: bold;
+}
+.ctanew
+{
+	padding: 35px 0;
+}
+#shake1
+{
+	  background: #fadddd;
+	  padding: 25px;
+}
+#shake1 h5
+{
+	font-weight: 500;
+	color: #C60001;
+}
+#shake1 strong
+{
+font-weight:bold;
+font-size: 22px;
+color:black;
+}
+.list-caret
+{
+	line-height: 29px; 
+	font-weight: bold;
+
+}
+
+.widget p
+{
+font-weight: bold;
+font-size:24px;
+}
+.widget li
+{
+line-height: 28px;
+color: #c60001; 
+font-weight: bold;
+}
+.widget ul
+{
+	line-height: 28px;
+	color: #c60001; 
+	font-weight: bold;
+}
+#widget1 p
+{   
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 39px;
+	text-align: center;"
+}
+#newsection h2
+{
+color: #c60001;
+font-weight: bold;
+    left: 41px;
+    position: relative;
+}
+#newsection h3
+{
+color: black;
+font-weight: bold;
+text-decoration: underline;
+
+}
+#tright1 ul
+{
+list-style-type: circle;
+margin-left:22px;
+}
+#tright1
+{
+
+text-align:justify;
+}
+.thumb img
+{
+	border: 2px solid #c60001;
+	border-radius: 22px;
+}
+.collapsible-header
+{
+	font-size:14px;
+}
+#content p
+{
+	line-height: 32px; 
+	margin-top: 3px; 
+	font-size: 16px;
+	text-align: justify;
+}
+#newrow p
+{
+
+margin-left: 17px;
+    margin-top: 22px;
+}
+
+

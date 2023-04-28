@@ -1,0 +1,718 @@
+ $(function()
+        {
+            //alert("inside");
+            var data=document.getElementById("carrr_pack").value;
+    
+    getpickcharge(data);
+            var dtToday = new Date();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if(month < 10)
+                month = '0' + month.toString();
+            if(day < 10)
+                day = '0' + day.toString();
+                var maxDate = year + '-' + month + '-' + day;
+                $("#JourneyDate").attr('min', maxDate);
+        });
+
+        function getseat(rate,seat)
+        {
+           
+            var ratee=rate;
+            var seating=seat;
+            document.getElementById("ticketamount").value=ratee;
+            document.getElementById("personticket").value=seating;
+            var pickuptimechargesrate=document.getElementById("pickuptimechargesrate").value;
+            var pick_idrate=document.getElementById("pick_idrate").value;
+            var pipntvalueamntrate=document.getElementById("pipntvalueamntrate").value;
+            if(pipntvalueamntrate=="")
+            {
+                var pipntvalueamntratess=0;
+            }else
+            {
+                var pipntvalueamntratess=pipntvalueamntrate;
+            }
+            if(pick_idrate=="")
+            {
+                var pickidrate=0;
+            }else
+            {
+                var pickidrate=pick_idrate;
+            }
+            if(pickuptimechargesrate=="")
+            {
+                var pickuptimechargesrates=0;
+                var amount=parseInt(ratee)+parseInt(pickuptimechargesrates)+parseInt(pickidrate)+parseInt(pipntvalueamntratess);
+                document.getElementById("fullamount").value=amount;
+                document.getElementById("peramount").innerHTML =ratee;
+                $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+            }else
+            {
+                var pickuptimechargesrates=pickuptimechargesrate;
+                var amount=parseInt(ratee)+parseInt(pickidrate)+parseInt(pipntvalueamntratess)+parseInt(pickuptimechargesrates);
+                document.getElementById("fullamount").value=amount;
+                document.getElementById("peramount").innerHTML =ratee;
+                $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+            }
+            
+        }
+
+        function pickuptimecharges(rate)
+        {
+            // alert(rate);
+            var rate=rate;
+            document.getElementById("pickuptimechargesrate").value=rate;
+            var pick_idrate=document.getElementById("pick_idrate").value;
+            var fullamount=document.getElementById("ticketamount").value;
+            var pipntvalueamntrate=document.getElementById("pipntvalueamntrate").value;
+            if(pipntvalueamntrate=="")
+            {
+                var pipntvalueamntratess=0;
+            }else
+            {
+                var pipntvalueamntratess=pipntvalueamntrate;
+            }
+            if(pick_idrate=="")
+            {
+                var amount=parseInt(fullamount)+parseInt(rate)+parseInt(pipntvalueamntratess);
+            }else
+            {
+                var amount=parseInt(fullamount)+parseInt(rate)+parseInt(pick_idrate)+parseInt(pipntvalueamntratess);
+            }
+            
+            document.getElementById("fullamount").value=amount;
+            $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+            $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+
+
+        }
+
+         function pickuptimecharges1(rate)
+        {
+           
+            var rate=rate;
+            var pickuptimechargesrate=$("#pickuptimechargesrate").val('');
+            var fullamount=document.getElementById("ticketamount").value;
+            var pick_idrate=document.getElementById("pick_idrate").value;
+            if(pick_idrate=="")
+            {
+                var pickidrate=0;
+            }
+            else
+            {
+                var pickidrate=pick_idrate;
+            }
+            var pipntvalueamntrate=document.getElementById("pipntvalueamntrate").value;
+            if(pipntvalueamntrate=="")
+            {
+                var pipntvalueamntratess=0;
+            }else
+            {
+                var pipntvalueamntratess=pipntvalueamntrate;
+            }
+            if(pickuptimechargesrate=="")
+            {
+                var amount=parseInt(fullamount)+parseInt(rate)+parseInt(pickidrate)+parseInt(pipntvalueamntratess);
+                document.getElementById("fullamount").value=amount;
+                $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                $( "#paymentcost1" ).text( "Advance Payment Cost Rs:-"+amount/2+"/-");
+            }else
+            {
+                var amount=parseInt(fullamount)+parseInt(pickidrate)+parseInt(pipntvalueamntratess);
+                document.getElementById("fullamount").value=amount;
+                $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+            }
+            
+            
+            
+
+
+        }
+
+
+         function getpickup_chargeamnt(value)
+        
+        {
+            
+            var pickrate=$("#pickup_chargeamnt").val();
+            
+
+            $.ajax({
+                type:'post',
+                url:'getpickup_chargeamnt.php',
+                data:
+                 {
+                    pickrate:pickrate
+                 },
+                 success:function(msg)
+                 {
+                    console.log(msg);
+                    document.getElementById("pick_idrate").value=msg;
+                    var pick_idrate=document.getElementById("pick_idrate").value;
+                    var pickuptimechargesrate=document.getElementById("pickuptimechargesrate").value;
+                    var fullamount=document.getElementById("ticketamount").value;
+                    var pipntvalueamntrate=document.getElementById("pipntvalueamntrate").value;
+                    if(pipntvalueamntrate=="")
+                    {
+                        var pipntvalueamntratess=0;
+                    }else
+                    {
+                        var pipntvalueamntratess=pipntvalueamntrate;
+                    }
+                    var pickuptimechargesratess;
+                    if(pickuptimechargesrate=="")
+                    {
+                        pickuptimechargesratess=0;
+                        var amount=parseInt(fullamount)+parseInt(pick_idrate)+parseInt(pipntvalueamntratess);
+                        document.getElementById("fullamount").value=amount;
+                        $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                        $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+                    }else
+                    {
+                        pickuptimechargesratess=pickuptimechargesrate;
+                       
+                        var amount=parseInt(fullamount)+parseInt(pick_idrate)+parseInt(pickuptimechargesrate)+parseInt(pipntvalueamntratess);
+                         document.getElementById("fullamount").value=amount;
+                        $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                        $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+                    }
+                    
+                    
+                    
+                            
+
+                         }
+            });
+
+        }
+
+
+        
+        
+        
+        
+        
+        function kms()
+        {
+            $("#pipntvalue").show();
+        }
+        
+        function pipntvalueamnt(amount)
+        {
+            
+            
+            var pipntvalueamntt=amount;
+            document.getElementById("pipntvalueamntrate").value=amount;
+            var pipntvalueamntrate=document.getElementById("pipntvalueamntrate").value;
+            //alert(pipntvalueamntrate);
+            var fullamount=$("#ticketamount").val();
+            var pickuptimechargesrate=document.getElementById("pickuptimechargesrate").value;
+            var pick_idrate=document.getElementById("pick_idrate").value;
+            if(pickuptimechargesrate=="")
+            {
+                var pickuptimechargesratess=0;
+            }else
+            {
+                var pickuptimechargesratess=pickuptimechargesrate;
+            }
+            if(pick_idrate=="")
+            {
+                var pick_idrates=0;
+            }else
+            {
+                var pick_idrates=pick_idrate;
+            }
+            var amount=parseInt(fullamount)+parseInt(pick_idrates)+parseInt(pickuptimechargesratess)+parseInt(pipntvalueamntrate);
+             document.getElementById("fullamount").value=amount;
+            $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+            $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+           
+        }
+        
+        function free()
+        {
+            $("#pipntvalue").hide();
+            var pipntvalueamntrate=$("#pipntvalueamntrate").val('');
+            // alert(pipntvalueamntrate);
+            var fullamount=$("#ticketamount").val();
+            var pickuptimechargesrate=document.getElementById("pickuptimechargesrate").value;
+            // alert(pickuptimechargesrate);
+            var pick_idrate=document.getElementById("pick_idrate").value;
+            if(pickuptimechargesrate=="")
+            {
+                var pickuptimechargesratess=0;
+            }else
+            {
+                var pickuptimechargesratess=pickuptimechargesrate;
+            }
+            if(pick_idrate=="")
+            {
+                var pick_idrates=0;
+            }else
+            {
+                var pick_idrates=pick_idrate;
+            }
+            if(pipntvalueamntrate=="")
+            {
+                
+                var pipntvalueamntratess=0;
+                var amount=parseInt(fullamount)+parseInt(pick_idrates)+parseInt(pickuptimechargesratess);
+                 document.getElementById("fullamount").value=amount;
+                $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+                $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+            }else
+            {
+                 var pipntvalueamntratess=pipntvalueamntrate;
+                var amount=parseInt(fullamount)+parseInt(pick_idrates)+parseInt(pickuptimechargesratess);
+             document.getElementById("fullamount").value=amount;
+            $( "#paymentcost2" ).text("Full Payment Cost Rs:"+amount+"/-");
+            $( "#paymentcost1" ).text( "Advance Payment Cost Rs:"+amount/2+"/-");
+            }
+            
+
+        }
+        
+        /*Table Show*/
+        
+        
+        
+        /*Validation*/
+        
+        $('#Continue').on('click',function()
+        {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            
+            var perprice=$('#priceless').val();
+            
+            
+            var Email=$("#Email").val();
+            var address=$("#address").val();
+            var MobileNo=$("#MobileNo").val();
+            var optMobileNo=$("#optMobileNo").val();
+            var laddus=$("#laddus").val();
+            var Tickets=$("#Tickets").val();
+            var cname=$("#cname").val();
+            var personticket=$("#personticket").val();
+            var per=personticket.split("+");
+            var perso=per[0];
+            var traveldate=$("#traveldate").val();
+            var tonsure=$("#tonsure").val();
+            var earpier=$("#earpier").val();
+            var id=Continue;
+            if($('input[name="timer"]:checked').length ==0)
+            {
+                alert("Please Select Pickup Time Charges");
+                return false;
+            }if($('input[name="pickup"]:checked').length ==0)
+            {
+                alert("Please Select Pickup Point");
+                return false;
+            }
+            if($('input[name="payment"]:checked').length ==0)
+            {
+                alert("Please Select Payment Type");
+                return false;
+            }
+            if(tonsure=="")
+            {
+                alert("Tonsure or Mottai must be filled out");
+                return false;
+            }
+            if(earpier=="")
+            {
+                alert("Earpier or Mottai must be filled out");
+                return false;
+            }
+            if(cname=="")
+            {
+                alert("Enter Name");
+                return false;
+            }
+            /*if(JourneyDate=="")
+            {
+              alert("Date must be filled out");
+              return false;
+            }*/
+            if(Tickets=="")
+            {
+                alert("Tickets must be filled out");
+                return false;
+            }
+            if(Tickets=="")
+            {
+                alert("Tickets must be filled out");
+                return false;
+            }
+            
+            if(Email=="")
+            {
+                alert("Email must be filled out");
+                return false;
+            }
+            if(address=="")
+            {
+                alert("Address must be filled out");
+                return false;
+            }
+            if(MobileNo=="")
+            {
+                alert("MobileNo must be filled out");
+                return false;
+            }
+            if(laddus=="")
+            {
+                alert("Laddus must be filled out");
+                return false;
+            }
+            if(traveldate=="")
+            {
+                alert("Travel Date must be filled out");
+                return false;
+            }
+            changehref1();
+            if(id)
+            {
+                //alert(id);
+                fnCalculate();
+            }
+            
+        });
+       
+        
+       function changehref1()
+        {
+            
+            var oldUrl = $("#one").attr("href"); 
+            // Get current url
+            var newUrl = oldUrl.replace("#", "#step1"); // Create new url
+            $("#one").attr("href", newUrl); // Set herf value
+
+            var oldUrl1 = $("#two").attr("href"); 
+            // Get current url
+            var newUrl1 = oldUrl1.replace("#", "#step4"); // Create new url
+            $("#two").attr("href", newUrl1); // Set herf value
+        }
+        
+        /*Over all view Table*/
+        
+        function fnCalculate()
+         {
+   
+    
+
+    var d = new Date();
+     var d1=d.getDate();
+     var d2=d.getMonth()+1;
+     //alert(d2);
+     var d3=d.getFullYear();
+     var d4=d1+'-'+d2+'-'+d3;
+     //alert("d--"+d4);
+    var AmtToPay = 0;
+    var PickupCharge = 0;
+    var addTripsTotal = 0;
+    var Discount = $("#Discount").val() === undefined ? "0" : $("#Discount").val();
+    var paymode = "Full";
+    var Tickets = $("#Tickets").val();
+    var ticketamount = $("#ticketamount").val();
+    var priceless=$("#personticket").val();
+    var daramnt=$("#daramnt").val();
+    var PackageAmount = $("#fullamount").val();
+    var PackageAmount1 = parseInt(PackageAmount) + parseInt(daramnt);
+    var price=$("#price").val();
+    
+    var paymentcost=$("#paymentcost:checked").val();
+    if(paymentcost=="Full Payment Cost")
+    {
+        var payment=$("#fullamount").val();
+        var balpayment="Nil";
+        var service=(parseInt(payment)/100)*parseInt(3);
+        document.getElementById("servicscharge").value=service;
+    }else
+    {
+        var payment=parseInt($("#fullamount").val())/parseInt(2);
+        var balpayment=parseInt($("#fullamount").val())-parseInt(payment);
+        var service=(parseInt(payment)/100)*parseInt(3);
+        document.getElementById("servicscharge").value=service;
+    }
+    var pickup_chargeamnt=$("#pickup_chargeamnt option:selected").text();
+    var carr=$("#carrr_pack").val();
+    var name=$("#name").val();
+  var traveldate= $('#TravelDate').val();
+  var wfood=$("#wfood:checked").val();
+    
+    if(wfood=="No Food")
+    {
+        chilfood="Nil";
+    }else
+    {
+        chilfood=$("#packagefood").val();
+    }
+
+    var pipntvalueamntrate=$("#pipntvalueamntrate").val();
+    
+    if(pipntvalueamntrate=="")
+    {
+        pipntvalueamntrates=0;
+    }else
+    {
+        pipntvalueamntrates=pipntvalueamntrate;
+    }
+    
+    var pickk=$("#pickuptimechargesrate").val();
+    if(pickk=="")
+    {
+        var pick_char="Nil";
+    }else
+    {
+        var pick_char=$("#pickuptimechargesrate").val();
+    }
+    var traveldate=$("#TravelDate").val();
+    var datee = traveldate.split('-');
+    var newDate = datee[2] + '-' + datee[1] + '-' + datee[0];
+  var contentConfirm =`<div class="col-lg-6 col-sm-12" >
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr style="height: 47px;">
+                               
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                
+                                <td><b>Booking ID:</b></td>
+                               <td>1</td>
+                              </tr>
+                              <tr>
+                               
+                                <td><b>Bill To:</b></td>
+                               <td>`+$("#name").val()+`</td>
+                              </tr>
+                              <tr>
+                               
+                                <td><b>Booked Date:</b></td>
+                               <td>`+d4+`</td>
+                              </tr>
+                              <tr>
+                                
+                                <td><b>Travel Date:</b></td>
+                                <td>`+newDate+`</td>
+                              </tr> 
+                              <tr>
+                                
+                                <td><b>Mobile Number :</b></td>
+                                <td>`+$("#MobileNo").val()+`</td>
+                              </tr> 
+                              <tr>
+                                
+                                <td><b>Whatsapp Number :</b></td>
+                                <td>`+$("#optMobileNo").val()+`</td>
+                              </tr> 
+                              <tr>
+                               
+                                <td><b>Email :</b></td>
+                                <td>`+$("#Email").val()+`</td>
+                              </tr> 
+                              <tr>
+                            
+                                <td><b>Address :</b></td>
+                                <td>`+$("#address").val()+`</td>
+                               
+                              </tr>  
+                            
+                               
+                                
+                               
+                              <tr>
+                               
+                                <td><b>Number of Seating :</b></td>
+                                <td>`+priceless+`</td>
+                              </tr> 
+                               
+                              
+                               
+                                
+                                 
+                               
+                          
+                        </tbody>
+                    </table>
+                </div>
+                 <div class="col-lg-6 col-sm-12" >
+                         <table class="table table-bordered">
+                        <thead>
+                            <tr style="height: 47px;">
+                             
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                               
+                                <td><b>Car Type :</b></td>
+                                <td>`+carr+`</td>
+                              </tr> 
+                              <tr>
+                             
+                                <td><b>Package Cost:</b></td>
+                               <td>`+ticketamount+`</td>
+                              </tr>
+                              
+                              <tr>
+                               
+                                <td><b>Pickup Time Charges(Driver Bata):</b></td>
+                                <td>`+pick_char+`</td>
+                              </tr> 
+                              <tr>
+                            
+                                <td><b>Pickup Point(1 or more Pickup Charges):</b></td>
+                                <td>`+pipntvalueamntrates+`</td>
+                               
+                              </tr>  
+                            
+                              <tr>
+                             
+                                <td><b>Pickup Charges(Out OF city):</b></td>
+                                <td>`+$("#pick_idrate").val()+`</td>
+                              </tr>  
+                                 
+                               
+                              <tr>
+                               
+                                <td><b>Service Charges :</b></td>
+                                <td>`+service+`</td>
+                              </tr> 
+                               
+                              <tr>
+                             
+                                <td><b>Total Amount :</b></td>
+                                <td>`+payment+`</td>
+                              </tr> 
+                              <tr>
+                             
+                                <td><b>Balance Amount :</b></td>
+                                <td>`+balpayment+`</td>
+                              </tr>  
+                                
+                                 
+                               
+                          
+                        </tbody>
+                    </table>
+                </div>`;
+    $("#contentConfirm").html(contentConfirm);
+                        
+                    }
+                   
+                    
+                    /*Save Data*/
+                    
+                    function fnConfirm(id) {
+                        
+                        if ($('#Confirmation').is(":checked")) {
+                            var name=$("#name").val();
+                            
+                            var traveldate=$("#TravelDate").val();
+                            var Email=$("#Email").val();
+                            var address=$("#address").val();
+                            var MobileNo=$("#MobileNo").val();
+                            var optMobileNo=$("#optMobileNo").val();
+                            var ticketamount=$("#ticketamount").val();
+                            var tonsure=$("#tonsure").val();
+                            var earpier=$("#earpier").val();
+                            var timer=$("#timer:checked").val();
+                            
+                            var pick=$("#pick:checked").val();
+                            var paymentcost=$("#paymentcost:checked").val();
+                            var fullamount=$("#fullamount").val();
+                            
+                            var d = new Date();
+                            var d1=d.getDate();
+                            var d2=d.getMonth()+1;
+                            var d3=d.getFullYear();
+                            var d4=d1+'/'+d2+'/'+d3;
+                            
+                            var chargerate=$("#pickup_chargeamnt").val();
+                            var carrr_pack=$("#carrr_pack").val();
+                            var seaterrr=$("#seaterrr").val();
+                            var packagee=$("#package").val();
+                            var pickup_chargeamnt=$("#pickup_chargeamnt").val();
+                            var tourname=$("#tour_packagename").val();
+                            var servicecharge=$("#servicscharge").val();
+                            $.ajax
+                            ({
+                                type:'post',
+                                url:'tournobook.php',
+                                data:
+                                {
+                                   cname:name,
+                                   
+                                   traveldate:traveldate,
+                                   Email:Email,
+                                   address:address,
+                                   MobileNo:MobileNo,
+                                   optMobileNo:optMobileNo,
+                                   ticketamount:ticketamount,
+                                   tonsure:tonsure,
+                                   earpier:earpier,
+                                   timer:timer,
+                                   pick:pick,
+                                   paymentcost:paymentcost,
+                                   d4:d4,
+                                   fullamount:fullamount,
+                                   
+                                   chargerate:chargerate,
+                                   carrr_pack:carrr_pack,
+                                   seaterrr:seaterrr,
+                                   packagee:packagee,
+                                   pickup_chargeamnt:pickup_chargeamnt,
+                                   tourname:tourname,
+                                   servicecharge:servicecharge,
+                                },
+                                success:function(msg)
+                                {
+                                    console.log(msg);
+                                    
+                                    var pay=msg;
+                                    window.location.href="tourdarshanTicketConf.php?id="+pay;
+                                }
+                            });
+                        }else
+                        {
+                            alert("Please Click the terms and conditions");
+                            
+                        }
+                    }
+
+                     function getpickcharge(data)
+{
+    
+    var id=data;
+    
+    var carname=data;
+    var car=document.getElementById("pickup_chargeamnt");
+    $.ajax({
+        type:'post',
+    url:'pricedetail.php',
+    data:
+    {
+    car:carname,
+    },
+    success:function(msg)
+    {
+        console.log(msg);
+        $("#citis_container").html(msg);
+    }
+    })
+}
+                    
+                   
