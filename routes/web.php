@@ -17,102 +17,84 @@ Route::get('/', function () {
     return view('Home');
 });
 
-Route::get('/Tirupati_Packages',function(){
+Route::get('/Tirupati_Packages', function () {
     return view('packages.Tirupati_Packages');
 })->name('Tirupati_Packages');
 
-
-Route::get('/rental_Packages',function(){
+Route::get('/Rental_Packages', function () {
     return view('packages.rental_Packages');
 })->name('rental_Packages');
 
-
-Route::get('/explore-in-a-day',function(){
+Route::get('/explore-in-a-day', function () {
     return view('packages.one_day_trip');
 })->name('explore-in-a-day');
 
-
-Route::get('/out_station',function(){
+Route::get('/out_station', function () {
     return view('packages.out_station');
 })->name('out_station');
 
-
-Route::get('/special',function(){
+Route::get('/special', function () {
     return view('packages.special');
 })->name('special');
 
-Route::get('/kalahasti',function(){
+Route::get('/kalahasti', function () {
     return view('packages.kalahasti');
 })->name('kalahasti');
 
 
-Route::get('/nri',function(){
+Route::get('/nri', function () {
     return view('packages.nri');
 })->name('nri');
 
-
-Route::get('/srivani',function(){
+Route::get('/srivani', function () {
     return view('packages.srivani');
 })->name('srivani');
 
-Route::get('/tirupathi',function(){
+Route::get('/tirupathi', function () {
     return view('packages.tirupathi');
 })->name('tirupathi');
 
-
-
-
-
 // tour packages routes
-
-
-Route::get('/tirupati-archieve',function(){
+Route::get('/tirupati-archieve', function () {
     return view('tour_packages.tirupati-archieve');
 })->name('tirupati-archieve');
 
-
-Route::get('/kalahasti-archieve',function(){
+Route::get('/kalahasti-archieve', function () {
     return view('tour_packages.kalahasti-archieve');
 })->name('kalahasti-archieve');
 
-Route::get('/nri',function(){
+Route::get('/nri', function () {
     return view('tour_packages.nri');
 })->name('nri');
 
 
 // rental packages
-
-Route::get('/rental',function(){
+Route::get('/rental', function () {
     return view('rental_packages.rental');
 })->name('rental');
 
 
 // Rental Cars Routes
-
-Route::get('/rental_etios',function(){
+Route::get('/rental_etios', function () {
     return view('rental_cars.rental_etios');
 })->name('Etios');
 
-
-Route::get('/rental_innova',function(){
+Route::get('/rental_innova', function () {
     return view('rental_cars.rental_innova');
 })->name('innova');
 
-
-Route::get('/rental_swift',function(){
+Route::get('/rental_swift', function () {
     return view('rental_cars.rental_swift');
 })->name('swift');
 
-
-Route::get('/rental_tempo',function(){
+Route::get('/rental_tempo', function () {
     return view('rental_cars.rental_tempo');
 })->name('tempo');
 
 
 
 // Booking
-
-Route::get('/booking',function(){
+Route::get('/booking', function () {
     return view('booking.booking');
 })->name('booking');
 
@@ -125,43 +107,38 @@ Route::get('/booking',function(){
 
 // kalahasti-cars
 
-Route::get('/kalahasti-etios',function(){
+Route::get('/kalahasti-etios', function () {
     return view('kalahasti_cars.kalahasti-etios');
 })->name('kalahasti-etios');
 
-
-Route::get('/kalahasti-innova',function(){
+Route::get('/kalahasti-innova', function () {
     return view('kalahasti_cars.kalahasti-innova');
 })->name('kalahasti-innova');
 
-Route::get('/kalahasti-tempo',function(){
+Route::get('/kalahasti-tempo', function () {
     return view('kalahasti_cars.kalahasti-tempo');
 })->name('kalahasti-tempo');
 
-
-Route::get('/kalahasti-swift',function(){
+Route::get('/kalahasti-swift', function () {
     return view('kalahasti_cars.kalahasti-swift');
 })->name('kalahasti-swift');
 
 
 
 // one day trip cars
-
-Route::get('/etios',function(){
+Route::get('/etios', function () {
     return view('one_day_trip_cars.etios');
 })->name('etios');
 
-
-Route::get('/innova',function(){
+Route::get('/innova', function () {
     return view('one_day_trip_cars.innova');
 })->name('innova');
 
-Route::get('/tempo',function(){
+Route::get('/tempo', function () {
     return view('one_day_trip_cars.tempo');
 })->name('tempo');
 
-
-Route::get('/swift',function(){
+Route::get('/swift', function () {
     return view('one_day_trip_cars.swift');
 })->name('swift');
 
@@ -169,29 +146,24 @@ Route::get('/swift',function(){
 
 
 // out station cars
-
-Route::get('/etios-car-rentals-outstation',function(){
+Route::get('/etios-car-rentals-outstation', function () {
     return view('out_station_cars.etios-car-rentals-outstation');
 })->name('etios-outstation');
 
-
-Route::get('/innova-car-rentals-outstation',function(){
+Route::get('/innova-car-rentals-outstation', function () {
     return view('out_station_cars.innova-car-rentals-outstation');
 })->name('innova-outstation');
 
-Route::get('/tempo-car-rentals-outstation',function(){
+Route::get('/tempo-car-rentals-outstation', function () {
     return view('out_station_cars.tempo-car-rentals-outstation');
 })->name('tempo-outstation');
 
-
-Route::get('/swift-car-rentals-outstation',function(){
+Route::get('/swift-car-rentals-outstation', function () {
     return view('out_station_cars.swift-car-rentals-outstation');
 })->name('swift-outstation');
 
 
 // Terms and condition
-
-Route::get('/terms_and_condition',function(){
+Route::get('/terms_and_condition', function () {
     return view('terms_and_condition');
 })->name('terms_and_condition');
-

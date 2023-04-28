@@ -10,8 +10,10 @@
     <title>AP Travels</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
@@ -19,16 +21,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/flaticon.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/barfiller.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/nice-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ assest('css/style.css') }}" type="text/css">
     <style>
         h1,
         h2,
@@ -296,7 +298,8 @@
                         <div class="header__top__inner">
 
                             <div class="header__logo">
-                                <a href="<?php echo url('/') ?>"><img src="img/LOGO.png" alt="" width="250" height="100" style="margin-top: -30px;"></a>
+                                <a href="<?php echo url('/') ?>"><img src="img/LOGO.png" alt="" width="250" height="100"
+                                        style="margin-top: -30px;"></a>
                             </div>
                         </div>
 
@@ -430,7 +433,9 @@
 
             <h2>Popular Packages</h2><br>
 
-            <p>Ap Tours & Travels provide tour packages of tirupati and other major places surrounding in chennai. Our expert drivers will guide you through the best experiences chennai has to offer.Book a tour with us to make your holidays truly memorable.</p>
+            <p>Ap Tours & Travels provide tour packages of tirupati and other major places surrounding in chennai. Our
+                expert drivers will guide you through the best experiences chennai has to offer.Book a tour with us to
+                make your holidays truly memorable.</p>
         </div>
         <br>
         <div class="container">
@@ -448,7 +453,8 @@
                         </div>
                         <div class="col-md">
                             <h5>Tirupathi Tour Packages</h5>
-                            <a href="<?php echo url('tirupati-archieve') ?>"><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('tirupati-archieve') ?>"><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div><br><br>
                     <div class="row">
@@ -457,7 +463,8 @@
                         </div>
                         <div class="col-md">
                             <h5>Kalahasti Tour Packages</h5>
-                            <a href="<?php echo url('kalahasti-archieve') ?> "><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('kalahasti-archieve') ?> "><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div><br><br>
                     <div class="row">
@@ -466,7 +473,8 @@
                         </div>
                         <div class="col-md">
                             <h5>NRI Darshan</h5>
-                            <a href="<?php echo url('nri') ?>"><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('nri') ?>"><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div>
                 </div><br><br>
@@ -480,7 +488,8 @@
                         </div>
                         <div class="col-md">
                             <h5>Mahabalipuram</h5>
-                            <a href="<?php echo url('rental') ?> "><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('rental') ?> "><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div><br><br>
                     <div class="row">
@@ -489,7 +498,8 @@
                         </div>
                         <div class="col-md">
                             <h5>Kanchipuram</h5>
-                            <a href="<?php echo url('rental') ?> "><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('rental') ?> "><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div><br><br>
                     <div class="row">
@@ -498,7 +508,8 @@
                         </div>
                         <div class="col-md">
                             <h5>Tiruthani</h5>
-                            <a href="<?php echo url('rental') ?> "><button class="btn text-white" style="background-color: rgb(254, 0, 0);">Book Now</button></a>
+                            <a href="<?php echo url('rental') ?> "><button class="btn text-white"
+                                    style="background-color: rgb(254, 0, 0);">Book Now</button></a>
                         </div>
                     </div>
                 </div>
@@ -512,7 +523,8 @@
 
             <h2>Tirupathi Tour Packages</h2><br><br>
 
-            <p>The package includes morning Breakfast, Afternoon Lunch , car rental for one day, Darshan tickets,Driver bata, tollgate, Permit, Parking, Doorstep pickup and drop</p>
+            <p>The package includes morning Breakfast, Afternoon Lunch , car rental for one day, Darshan tickets,Driver
+                bata, tollgate, Permit, Parking, Doorstep pickup and drop</p>
         </div>
         <div class="container">
             <div class="row">
@@ -595,13 +607,16 @@
                             <p style="color: white;"><b>Name</b></p>
                             <input type="text" placeholder="Enter your name" class="form-control" name="name"><br>
                             <p style="color: white;"><b>Mobile Number</b></p>
-                            <input type="number" placeholder="Enter your Mobile number" class="form-control" name="mobile"><br>
-                            <button class="btn  text-white" type="submit" style="background-color: rgb(254, 0, 0);">Submit</button><br><br>
+                            <input type="number" placeholder="Enter your Mobile number" class="form-control"
+                                name="mobile"><br>
+                            <button class="btn  text-white" type="submit"
+                                style="background-color: rgb(254, 0, 0);">Submit</button><br><br>
                         </form>
                     </div>
                 </div>
                 <div class="col-lg"><br><br><br>
-                    <h4 class="text-center" style="color: #fff; font-weight: bold;">To Know more about our packages send your details, our team will contact you shortly.</h4>
+                    <h4 class="text-center" style="color: #fff; font-weight: bold;">To Know more about our packages send
+                        your details, our team will contact you shortly.</h4>
                 </div>
             </div>
         </div>
@@ -614,7 +629,8 @@
 
             <h2>Kalahasthi Tour Packages</h2><br><br>
 
-            <p>The package includes morning Breakfast, Afternoon Lunch , car rental for one day, Darshan tickets,Driver bata, tollgate, Permit, Parking, Doorstep pickup and drop</p>
+            <p>The package includes morning Breakfast, Afternoon Lunch , car rental for one day, Darshan tickets,Driver
+                bata, tollgate, Permit, Parking, Doorstep pickup and drop</p>
         </div>
         <div class="container">
             <div class="row">
@@ -695,7 +711,8 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="quality">
-                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;100% &nbsp;SATISFACTION</b></p>
+                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;100%
+                                &nbsp;SATISFACTION</b></p>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -705,12 +722,14 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="quality">
-                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;SAFE & SECURE JOURNEY</b></p>
+                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;SAFE & SECURE JOURNEY</b>
+                        </p>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="quality">
-                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;ACCEPT ONLINE PAYMENT</b></p>
+                        <p><i class="fa fa-certificate" aria-hidden="true"></i><b>&nbsp;&nbsp;ACCEPT ONLINE PAYMENT</b>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -776,7 +795,7 @@
                         </a>
                     </div>
                 </div>
-             
+
             </div>
         </div>
         </div>
